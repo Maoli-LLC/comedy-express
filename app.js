@@ -14,7 +14,7 @@ const allowedOrigins = ['http://localhost:3000',
 
       
 
-app.use(cors())
+app.use(cors(allowedOrigins))
 
 app.get('/', (req, res) => {
         axios.get('https://muse.ai/api/files/collections?metadata=full', {
