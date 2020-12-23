@@ -16,7 +16,7 @@ const allowedOrigins = ['http://localhost:3000',
 
 app.use(cors(allowedOrigins))
 
-app.get('/', (req, res) => {
+app.get('https://gifted-newton-d5f936.netlify.app/', (req, res) => {
         axios.get('https://muse.ai/api/files/collections?metadata=full', {
             headers: {
             'Access-Control-Allow-Orig in' :'*'  , 
