@@ -6,6 +6,10 @@
   from = "/*"
   to = "/index.html"
   status = 200
+  from = "/app/*"
+  to = "/app"
+  force = false
+  status = 200
 
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
