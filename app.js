@@ -14,12 +14,12 @@ const allowedOrigins = ['http://localhost:3000',
 
       
 
-app.use(cors(allowedOrigins))
+app.use(cors())
 
-app.get('https://gifted-newton-d5f936.netlify.app/', (req, res) => {
+app.get('/', (req, res) => {
         axios.get('https://muse.ai/api/files/collections?metadata=full', {
             headers: {
-            'Access-Control-Allow-Orig in' :'*'  , 
+            'Access-Control-Allow-Origin' :'*'  , 
             'Key': '8a3BSnS90pYiSZP2lEVYNUFo5fdcf818'
 
             },
