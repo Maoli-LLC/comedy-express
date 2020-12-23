@@ -15,7 +15,7 @@ let scidArray =[]
 
 app.use(cors())
 
-app.get('/', (req, res) => {
+app.get('https://admiring-bose-355d23.netlify.app/', (req, res) => {
         axios.get('https://muse.ai/api/files/collections?metadata=full', {
             headers: {
                 'Key': '8a3BSnS90pYiSZP2lEVYNUFo5fdcf818'
