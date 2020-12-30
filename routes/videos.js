@@ -3,7 +3,6 @@ var router = express.Router();
 const app = express();
 const API_KEY = "8a3BSnS90pYiSZP2lEVYNUFo5fdcf818"
 const axios = require("axios");
-const { response } = require('express');
 let newArray = [];
 var mySet = new Set(newArray);
 newArray = [...mySet];
