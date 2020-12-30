@@ -25,9 +25,5 @@ router.get('/', (req, res) => {
   
 })
 res.end();
-// res.end();
-// app.listen(port, () => {
-// console.log(`listening on port ${port}`)
 
-// })
 module.exports = router;
