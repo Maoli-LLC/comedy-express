@@ -8,9 +8,9 @@ const { response } = require('express');
 let newArray = [];
 var mySet = new Set(newArray);
 newArray = [...mySet];
-let scidArray =[]
 
 
+///Making some changes 
       
 
 app.use(cors())
