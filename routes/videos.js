@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
   }).then(resp => {
       res.send(resp.data);
       
-  
+      res.end();
   }).catch(err => {
       res.send(err);
   })
