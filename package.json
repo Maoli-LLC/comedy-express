@@ -12,8 +12,7 @@
     "url": "git+https://github.com/neverendingqs/netlify-express.git"
   },
   "keywords": [
-    "netlify",
-    "express.js"
+     "express.js"
   ],
   "author": "neverendingqs",
   "license": "Apache-2.0",
@@ -24,8 +23,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cors": "^2.8.5",
-    "isomorphic-fetch": "^3.0.0",
-    "netlify-cli": "^2.69.11"
+    "isomorphic-fetch": "^3.0.0"
   },
   "devDependencies": {
     "body-parser": "^1.19.0",
