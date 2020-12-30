@@ -1,35 +1,43 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 5000;
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+
+var indexRouter = require('./routes/index');
+var videosRouter = require('./routes/videos');
 var cors = require('cors')
-const API_KEY = "8a3BSnS90pYiSZP2lEVYNUFo5fdcf818"
-const axios = require("axios");
-const { response } = require('express');
-let newArray = [];
-var mySet = new Set(newArray);
-newArray = [...mySet];
 
-
-///Making some changes 
-      
+var app = express();
 
 app.use(cors())
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
-app.get('/', (req, res) => {
-        axios.get('https://muse.ai/api/files/collections?metadata=full', {
-            headers: {
-                'Key': '8a3BSnS90pYiSZP2lEVYNUFo5fdcf818'
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-            },
-        }).then(resp => {
-            res.send(resp.data);
-        
-        }).catch(err => {
-            res.send(err);
-         })
-    })
+app.use('/', videosRouter);
 
-app.listen(port, () => {
-    console.log(`listening on port ${port}`)
 
-})
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;
