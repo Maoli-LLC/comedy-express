@@ -1,7 +1,6 @@
 const express = require('express');
 var router = express.Router();
 const app = express();
-const port = process.env.PORT || 5000;
 const API_KEY = "8a3BSnS90pYiSZP2lEVYNUFo5fdcf818"
 const axios = require("axios");
 const { response } = require('express');
@@ -24,8 +23,8 @@ router.get('/', (req, res) => {
    })
 })
 
-app.listen(port, () => {
-console.log(`listening on port ${port}`)
+// app.listen(port, () => {
+// console.log(`listening on port ${port}`)
 
-})
+// })
 module.exports = router;
