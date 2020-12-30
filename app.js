@@ -9,8 +9,7 @@ let newArray = [];
 var mySet = new Set(newArray);
 newArray = [...mySet];
 let scidArray =[]
-const allowedOrigins = ['http://localhost:3000',
-  'https://gifted-newton-d5f936.netlify.app/'];
+
 
       
 
@@ -19,8 +18,7 @@ app.use(cors())
 app.get('/', (req, res) => {
         axios.get('https://muse.ai/api/files/collections?metadata=full', {
             headers: {
-            'Access-Control-Allow-Origin' :'*'  , 
-            'Key': '8a3BSnS90pYiSZP2lEVYNUFo5fdcf818'
+                'Key': '8a3BSnS90pYiSZP2lEVYNUFo5fdcf818'
 
             },
         }).then(resp => {
