@@ -20,10 +20,11 @@ router.get('/', (req, res) => {
   
   }).catch(err => {
       res.send(err);
-   })
+  })
+    
 })
 
-req.end()
+res.end();
 // app.listen(port, () => {
 // console.log(`listening on port ${port}`)
 
