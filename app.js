@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 var cors = require('cors')
 const API_KEY = "8a3BSnS90pYiSZP2lEVYNUFo5fdcf818"
 const axios = require("axios");
