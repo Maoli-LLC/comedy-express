@@ -23,6 +23,7 @@ router.get('/', (req, res) => {
    })
 })
 
+req.end()
 // app.listen(port, () => {
 // console.log(`listening on port ${port}`)
 
