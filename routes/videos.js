@@ -17,11 +17,12 @@ router.get('/', (req, res) => {
       },
   }).then(resp => {
       res.send(resp.data);
+      resp.end();
   
   }).catch(err => {
       res.send(err);
   })
-  res.end(); 
+  
 })
 
 // res.end();
