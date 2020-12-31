@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var videosRouter = require('./routes/videos');
+var videosRouter = require('./routes/videosApi');
 var cors = require('cors')
 
 var app = express();
@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', videosRouter);
+app.use('/.netlify/functions/videosApi', videosRouter);
 
 
 // catch 404 and forward to error handler
@@ -44,4 +44,4 @@ app.use(function(err, req, res, next) {
 //   console.log(`listening to port ${port}`)
 // })
 
-module.exports = app;
+module.exports.handler = serverless(app);

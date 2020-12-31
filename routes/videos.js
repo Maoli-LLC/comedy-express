@@ -8,7 +8,7 @@ var mySet = new Set(newArray);
 newArray = [...mySet];
 
 /* GET users listing. */
-router.get('/', (req, res) => {
+router.get('/videos', (req, res) => {
   axios.get('https://muse.ai/api/files/collections?metadata=full', {
       headers: {
           'Key': '8a3BSnS90pYiSZP2lEVYNUFo5fdcf818'
