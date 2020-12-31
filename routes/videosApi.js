@@ -11,8 +11,7 @@ router.get('/', (req, res) => {
     axios.get('https://muse.ai/api/files/collections?metadata=full', {
         headers: {
             'Key': '8a3BSnS90pYiSZP2lEVYNUFo5fdcf818',
-            "Access-Control-Allow-Origin": "*",
-            'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+            'crossDomain': true,
         },
     }).then(resp => {
         res.send(resp.data);
