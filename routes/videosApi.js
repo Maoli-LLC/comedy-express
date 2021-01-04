@@ -8,9 +8,9 @@ const router = express.Router();
 router.use(cors());
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
-router.get('/', (req, res) => {
 
-    axios.get('https://muse.ai/api/files/collections?metadata=full', {
+router.get('/', (req, res) => {
+    axios.get(proxyurl+'https://muse.ai/api/files/collections?metadata=full', {
         headers: {
             'Key': '8a3BSnS90pYiSZP2lEVYNUFo5fdcf818',
             'Access-Control-Allow-Orig in': "*"

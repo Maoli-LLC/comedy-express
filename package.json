@@ -18,5 +18,9 @@
     "netlify-cli": "^2.69.11",
     "netlify-lambda": "^2.0.2",
     "serverless-http": "^2.6.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Maoli-LLC/comedy-express.git",
+  "author": "globalxbank@gmail.com <globalxbank@gmail.com>",
+  "license": "MIT"
 }
