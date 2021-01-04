@@ -6,13 +6,14 @@ const app = express();
 var cors = require('cors')
 const router = express.Router();
 router.use(cors());
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
 router.get('/', (req, res) => {
 
     axios.get('https://muse.ai/api/files/collections?metadata=full', {
         headers: {
             'Key': '8a3BSnS90pYiSZP2lEVYNUFo5fdcf818',
-            'crossDomain': true,
+            'Access-Control-Allow-Orig in': "*"
         },
     }).then(resp => {
         res.send(resp.data);
@@ -24,6 +25,4 @@ router.get('/', (req, res) => {
     
   })
 
-app.use('/.netlify/functions/videosApi', router)
-
-module.exports.handler = serverless(app);
+module.exports = router;
