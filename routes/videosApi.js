@@ -21,6 +21,8 @@ router.get('/', (req, res) => {
         res.send(err);
     })
     
-  })
+})
 
-  module.exports.handler = serverless(app);
+app.use('/.netlify/functions/videosApi', router)
+
+module.exports.handler = serverless(app);
