@@ -3,8 +3,9 @@ const serverless = require('serverless-http')
 const API_KEY = "8a3BSnS90pYiSZP2lEVYNUFo5fdcf818"
 const axios = require("axios");
 const app = express();
-
+var cors = require('cors')
 const router = express.Router();
+router.use(cors());
 
 router.get('/', (req, res) => {
 
